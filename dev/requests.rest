@@ -1,0 +1,78 @@
+##############################################################
+# Mobile Application Programming (SCSJ3623)
+# Semester 2, 2019/2020
+##############################################################
+
+# REST API Server on Local Firebase
+#@baseUrl = http://localhost:5001/dulang-backend-rest/us-central1/api
+
+# REST API Server on Live Firebase
+@baseUrl = https://us-central1-dulang-backend-rest.cloudfunctions.net/api
+
+
+//Foods data Testinggg
+### Getting the list of foods
+GET {{baseUrl}}/foods
+
+###  Getting a food of given id
+GET {{baseUrl}}/foods/4byimXxuamxgJkEQ3OfG
+
+###  Create a new food
+POST {{baseUrl}}/foods
+Content-Type: application/json
+
+{
+    "image": "assets/images/meeKari.png",
+    "accepted": false,
+    "userid": "5CxmF6vmqBBNAOKxcXjY",
+    "qty": 10,
+    "name": "Mee Kari",
+    "category": "Cooked",
+}
+
+### Update the status of a given food (whether is completed or not)
+PATCH {{baseUrl}}/foods/LdL0Qq2xBlP5c9Wuh0wI
+Content-Type: application/json
+
+{
+    "userid":"5CxmF6vmqBBNAOKxcXjY"
+}
+
+### Deleting a given food
+DELETE {{baseUrl}}/foods/
+
+
+
+
+//Users data Testinggg
+### Getting the list of users
+GET {{baseUrl}}/users
+
+###  Getting a user of given id
+GET {{baseUrl}}/users/CxEp62GXswmrN7zMT8SS
+
+###  Create a new user
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "image": null,
+    "distance": 3.5,
+    "password": "123456",
+    "name": "Mimi",
+    "location": "Sarawak",
+    "email": "mimi@dulang.my",
+    "username": "mimi",
+}
+
+### Update the status of a given user (whether is completed or not)
+PATCH {{baseUrl}}/users/CxEp62GXswmrN7zMT8SS
+Content-Type: application/json
+
+{
+    "distance":1.8
+}
+
+
+### Deleting a given user
+DELETE {{baseUrl}}/users/
